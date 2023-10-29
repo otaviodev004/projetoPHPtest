@@ -1,0 +1,7 @@
+{
+  "name": "testPHPMOIO",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

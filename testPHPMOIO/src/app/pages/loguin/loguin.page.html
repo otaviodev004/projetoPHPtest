@@ -1,0 +1,72 @@
+
+<!-- <form class="form" method="POST" action="loguin/dadoslogin.php">
+  <ion-content>
+
+    <div id="header">
+      <div id="app-bar">
+        <ion-icon name="arrow-back" routerLink="/welcome"></ion-icon>
+        <div id="logo">
+          <img src="assets/icon/logoone.png" alt="" />
+        </div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="cadastro">
+      <ion-card class="form_cadastro">
+        <ion-card-content>
+          <ion-item>
+            <ion-icon name="mail"></ion-icon>
+            <ion-input type="text" placeholder="Email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="lock-closed"></ion-icon>
+            <ion-input type="password" placeholder="Senha"></ion-input>
+          </ion-item>
+          <ion-button name="acessar" expand="block">Acessar Conta</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+  </ion-content>
+</form> -->
+
+<ion-content>
+
+  <div id="header">
+    <div id="app-bar">
+      <ion-icon name="arrow-back" routerLink="/welcome"></ion-icon>
+      <div id="logo">
+        <img src="assets/icon/logoone.png" alt="" />
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <form [formGroup]="fGroup">
+    <div class="cadastro">
+      <ion-card class="form_cadastro">
+        <ion-card-content>
+          <ion-item>
+            <ion-icon name="mail"></ion-icon>
+            <ion-input  type="email" formControlName="email" placeholder="Email" ></ion-input>
+            <div *ngIf="fGroup.controls['email'].errors">
+              <p *ngIf="fGroup.controls['email'].errors['pattern']">Este campo não está correto!</p>
+              <p *ngIf="fGroup.controls['email'].errors['maxLength']">Este campo deve ter menos que 100 caracteres!</p>
+            </div>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="lock-closed"></ion-icon>
+            <ion-input name="senha" type="password" formControlName="senha" placeholder="Senha" ></ion-input>
+            <div *ngIf="fGroup.controls['senha'].errors">
+              <p *ngIf="fGroup.controls['senha'].errors['minLength']">Este campo tem que ter mais de 4 caracteres!</p>
+              <p *ngIf="fGroup.controls['senha'].errors['maxLength']">Este campo tem que ter menos de 40 caracteres!</p>
+            </div>
+          </ion-item>
+          <ion-button name="acessar" id="acessar" expand="block" (click)="showProfile()" [disabled]="!fGroup.valid">Acessar Conta</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </form>
+  
+</ion-content>

@@ -1,0 +1,59 @@
+
+<ion-content [fullscreen]="true">
+
+  <div id="header">
+    <div id="app-bar">
+      <ion-icon name="" routerLink="/welcome"></ion-icon>
+      <div id="logo">
+        <img src="assets/icon/bannerMoio.png" alt="" />
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <form class="form" method="POST" action="loguin/dadoslogin.php">
+    <div class="pesquisar">
+      <ion-card class="form_pesquisa">
+        <ion-card-content>
+          <ion-item>
+            <ion-icon name="search-outline"></ion-icon>
+            <ion-input name="pesquisa" type="text" placeholder="Pesquisar"></ion-input>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </div><br><br>
+
+    <div class="pesqpermissoes">
+      <ion-icon name="arrow-back-outline" id="voltaLocal" style="color: black;" (click)="againpage()"></ion-icon>
+      <h1 style="color:black;" id="permissoes">Permissões</h1>
+      <ion-button name="bntcriar" expand="block" (click)="showmodalPermissao()">Criar Nova Permissão</ion-button>
+    </div>
+
+    <div class="status">
+      <ion-card class="form_status">
+          <hr/>
+            <ion-grid  >
+              <!-- Cabeçalho da tabela -->
+              <ion-row>
+                <ion-col class="ion-hide" size='4' style="background-color: #07ba10; color: #ededed;" ><b>Código</b></ion-col>
+                <ion-col size='4' style="background-color: #07ba10; color: #ededed;" ><b>Nome</b></ion-col>
+                <ion-col size='4' style="background-color: #07ba10; color: #ededed;"><b>Status</b></ion-col>
+                <ion-col size='4' style="background-color: #07ba10; color: #ededed;"><b>Status</b></ion-col>
+              </ion-row>
+
+              <ion-row *ngFor="let linha of linhas">
+                <ion-col class="ion-hide">{{ linha.id }}</ion-col>
+                <ion-col size='4'>{{ linha.nome }}</ion-col>
+                <ion-col size='4'(click)="modificaStatus(linha.id)">{{ linha.status }}</ion-col>
+                <ion-col size='2'><ion-icon name='trash-outline'></ion-icon></ion-col>
+                <ion-col size='2'><ion-icon name='create-outline'></ion-icon></ion-col>
+              </ion-row>
+
+            </ion-grid>
+      </ion-card>
+
+    </div>
+  </form>
+
+
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-content [fullscreen]="true">
+
+  <div id="header">
+    <div id="app-bar">
+      <ion-icon name="" routerLink="/welcome"></ion-icon>
+      <div id="logo">
+        <img src="assets/icon/bannerMoio.png" alt="" />
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <form class="form" method="POST" action="loguin/dadoslogin.php">
+    <div class="local">
+      <ion-card class="form_local">
+        <ion-card-content>
+          <ion-item>
+            <ion-icon name="search-outline"></ion-icon>
+            <ion-input name="pesquisa" type="text" placeholder="Pesquisar"></ion-input>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </div><br><br>
+
+    <div class="pesqlocal">
+        <ion-icon name="arrow-back-outline" id="voltaLocal" style="color: black;" (click)="againpage()"></ion-icon>
+        <h1 style="color:black;" id="local">Local</h1>
+        <ion-button name="bntcriarLocal" expand="block" (click)="showmodalLocal()">Criar novo LocaL</ion-button>
+    </div>
+
+    <div class="statusLocal">
+      <ion-card class="form_statusLocal">
+        <hr/>
+        <ion-grid  >
+          <!-- Cabeçalho da tabela -->
+          <ion-row>
+            <ion-col class="ion-hide" size='4' style="background-color: #07ba10; color: #ededed;" ><b>Código</b></ion-col>
+            <ion-col size='6' style="background-color: #07ba10; color: #ededed;" ><b>Nome Local</b></ion-col>
+            <ion-col size='6' style="background-color: #07ba10; color: #ededed;"><b>Status</b></ion-col>
+          </ion-row>
+
+          <ion-row *ngFor="let linha of linhas">
+            <ion-col class="ion-hide">{{ linha.id }}</ion-col>
+            <ion-col size='6'>{{ linha.nomeL }}</ion-col>
+            <ion-col size='3'(click)="excluirLocal(linha.id,linha.nomeL)"><ion-icon name='trash-outline'></ion-icon></ion-col>
+            <ion-col size='3'><ion-icon name='create-outline'></ion-icon></ion-col>
+          </ion-row>
+
+        </ion-grid>
+      </ion-card>
+    </div>
+  </form>
+
+
+</ion-content>

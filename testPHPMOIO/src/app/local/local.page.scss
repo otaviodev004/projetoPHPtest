@@ -1,0 +1,138 @@
+ion-content{
+  --background: #e0dfe6;
+
+  #header {
+    height: 40%;
+    background: black;
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    padding: 20px;
+
+    #app-bar {
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      icon-icon {
+        font-size: 24px;
+        margin-left: -5px;
+      }
+
+      #logo{
+        margin-top: 250px;
+        width: 40%;
+        height: 0px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        align-self: center;
+
+      }
+    }
+  }
+
+  .local {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    right: 30%;
+    background-color: #fff;
+    border-radius: 20px 20px 20px 20px;
+
+
+    .form_local {
+      background-color: black;
+      box-shadow: none;
+      border-radius: 10px;
+      padding: 10px 10px;
+
+      ion-item {
+        --background: #e0dfe6;
+        --padding-start: 10px;
+        --highlight-height: 0;
+        --border-width: 0;
+        --padding-top: 0;
+        --min-height: 40px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+
+        ion-icon {
+          font-size: 18px;
+        }
+
+        ion-input {
+          margin-left: 10px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .pesqlocal{
+    h1 {
+      margin-left: 10px;
+      font-weight: bold;
+    }
+
+    #voltaLocal {
+      margin-left: 20px;
+    }
+
+    #local{
+      margin-left: 170px;
+    }
+
+    ion-button {
+      margin-top: 15px;
+      --background: #07ba10;
+      width: 50%;
+      margin-left: 25%;
+    }
+  }
+
+  .statusLocal{
+    position: absolute;
+    top: 58%;
+    left: 20%;
+    right: 20%;
+    background-color: black;
+    border-radius: 20px 20px 20px 20px;
+
+
+    .form_statusLocal{
+      background: #e0dfe6;
+    }
+
+    .cabecalho{
+      h4{
+        margin-left: 100px;
+        font-weight: bold;
+        display: inline-block;
+      }
+
+      #statusone{
+        margin-left: 350px;
+      }
+
+      #statustwo{
+        margin-left: 350px;
+      }
+
+      hr{
+        background: black;
+      }
+    }
+  }
+
+  ion-col {
+    background-color: #e0dfe6;
+    border: solid 1px black;
+    color: black;
+    text-align: center;
+  }
+}

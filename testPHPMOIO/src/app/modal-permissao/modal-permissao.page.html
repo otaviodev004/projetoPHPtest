@@ -1,0 +1,57 @@
+<ion-content [fullscreen]="true">
+  <div id="header">
+    <div id="app-bar">
+      <ion-icon name="arrow-back-outline" style="color: black;" (click)="close()"></ion-icon>
+      <div id="logo">
+        <img src="assets/icon/moio.png" alt="" />
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <form [formGroup]="fGroupPermissao">
+    <div id="textPermissao">
+      <h1>Nova Permissão</h1>
+      <p>Registre funções na sua conta para facilitar a organização.</p>
+      <div id="informacoes">
+        <ion-input label="Nome" formControlName="nome" labelPlacement="floating" [counter]="true" maxlength="40" helperText="Digite seu Nome"></ion-input>
+        <div *ngIf="fGroupPermissao.controls['nome'].errors">
+          <p *ngIf="fGroupPermissao.controls['nome'].errors['minLength']">Este campo tem que ter mais de 2 caracteres!</p>
+          <p *ngIf="fGroupPermissao.controls['nome'].errors['maxLength']">Este campo tem que ter menos de 100 caracteres!</p>
+        </div>
+        <ion-input type="email" formControlName="emailPermissao" fill="solid" label="Email" labelPlacement="floating" helperText="Digite um E-mail valido" errorText="E-mail Invalido" ngModel email></ion-input>
+        <div *ngIf="fGroupPermissao.controls['emailPermissao'].errors">
+          <p *ngIf="fGroupPermissao.controls['emailPermissao'].errors['pattern']">Este campo não está correto!</p>
+          <p *ngIf="fGroupPermissao.controls['emailPermissao'].errors['maxLength']">Este campo deve ter menos que 100 caracteres!</p>
+        </div>
+      </div>
+      <div id="funcoes">
+        <h1>Funções</h1>
+        <div id="selectsFuncoes">
+          <ion-checkbox name="criar" formControlName="criarNew">Criar novo local</ion-checkbox><br>
+          <ion-checkbox name="acess" formControlName="acessPermissao">Acessar permissões</ion-checkbox>
+        </div>
+      </div>
+    </div>
+  <ion-button shape="round" name="enviar" (click)="novaPermissao()">Enviar Solicitação de permissão</ion-button>
+
+  </form>
+    <!-- <div id="textPermissao">
+      <h1>Nova Permissão</h1>
+      <p>Registre funções na sua conta para facilitar a organização.</p>
+      <div id="informacoes">
+        <ion-input label="Nome" labelPlacement="floating" [counter]="true" maxlength="40" helperText="Digite seu Nome"></ion-input>
+        <ion-input type="email" fill="solid" label="Email" labelPlacement="floating" helperText="Digite um E-mail valido" errorText="E-mail Invalido" ngModel email></ion-input>
+      </div>
+      <div id="funcoes">
+        <h1>Funções</h1>
+        <div id="selectsFuncoes">
+          <ion-checkbox name="criar">Criar novo local</ion-checkbox><br>
+          <ion-checkbox name="acess">Acessar permissões</ion-checkbox>
+        </div>
+      </div>
+    </div>
+  <ion-button shape="round" name="enviar">Enviar Solicitação de permissão</ion-button> -->
+
+
+</ion-content>
